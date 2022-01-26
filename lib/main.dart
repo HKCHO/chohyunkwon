@@ -1,3 +1,5 @@
+
+import 'package:chohyunkwon/src/config/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,9 +12,7 @@ class ChoHyunKwon extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '조현권',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: AppTheme.buildLightTheme(context),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
