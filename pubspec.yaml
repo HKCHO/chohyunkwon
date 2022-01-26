@@ -17,6 +17,7 @@ dependencies:
 
   # Dart lint - 설정: analysis_options.yaml
   analyzer: ^1.7.1
+  google_fonts: ^2.2.0
 
 dev_dependencies:
   flutter_test:

@@ -3,6 +3,7 @@
 
 import 'package:chohyunkwon/src/constant/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   /// 밝은 테마 (Light theme)
@@ -10,12 +11,18 @@ class AppTheme {
     final base = ThemeData.light();
 
     return base.copyWith(
+      appBarTheme: AppBarTheme(
+        brightness: Brightness.dark,  // primaryColor가 어두운 계열 색상이라 statusbar brightness도 dark로 세팅
+      ),
       // 색상 스키마
       colorScheme: ColorScheme.fromSwatch(
         // 주 스워치
         primarySwatch: _createMaterialColor(AppColors.brand),
       ),
+      // 주 색상
       primaryColor: AppColors.brand,
+      // 텍스트 테마
+      textTheme: _buildLightTextTheme(base.textTheme),
       // 스캐폴드 배경색
       scaffoldBackgroundColor: AppColors.white50,
     );
@@ -23,6 +30,31 @@ class AppTheme {
 
   // TODO 어두운 테마 (Dark theme)
 
+  // 밝은 텍스트 테마 만들기
+  // 기본 텍스트 테마 참고: https://api.flutter.dev/flutter/material/TextTheme-class.html
+  static TextTheme _buildLightTextTheme(TextTheme base) {
+    return base.copyWith(
+      // headline1: GoogleFonts.mcLaren(),
+      // headline2: GoogleFonts.mcLaren(),
+      // headline3: GoogleFonts.mcLaren(),
+      // headline4: GoogleFonts.mcLaren(),
+      // headline5: GoogleFonts.mcLaren(),
+      // headline6: GoogleFonts.mcLaren(),
+      // bodyText1: GoogleFonts.mcLaren(),
+      bodyText1: GoogleFonts.notoSans(
+        fontWeight: FontWeight.normal,
+        fontSize: 18,
+        letterSpacing: 0.2,
+        color: AppColors.textDefault,
+      ),
+      bodyText2: GoogleFonts.notoSans(
+        fontWeight: FontWeight.normal,
+        fontSize: 14,
+        letterSpacing: -0.05,
+        color: AppColors.textDefault,
+      ),
+    );
+  }
 
   // Color에서 MaterialColor 만들기
   static MaterialColor _createMaterialColor(Color color) {
@@ -34,7 +66,7 @@ class AppTheme {
       strengths.add(0.1 * i);
     }
 
-    for (double strength in strengths ) {
+    for (double strength in strengths) {
       final double ds = 0.5 - strength;
       swatch[(strength * 1000).round()] = Color.fromRGBO(
         r + ((ds < 0 ? r : (255 - r)) * ds).round(),
@@ -46,4 +78,7 @@ class AppTheme {
 
     return MaterialColor(color.value, swatch);
   }
+
+  /// 텍스트 크기가 시스템 텍스트 스케일을 따라가는지 여부
+  static bool fixedFontScale = true;
 }
