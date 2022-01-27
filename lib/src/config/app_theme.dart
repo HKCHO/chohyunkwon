@@ -3,6 +3,7 @@
 
 import 'package:chohyunkwon/src/constant/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
@@ -12,8 +13,9 @@ class AppTheme {
 
     return base.copyWith(
       appBarTheme: AppBarTheme(
-        brightness: Brightness.dark,  // primaryColor가 어두운 계열 색상이라 statusbar brightness도 dark로 세팅
+        systemOverlayStyle: SystemUiOverlayStyle.light,  // primaryColor가 어두운 계열 색상이라 statusbar brightness도 dark로 세팅
       ),
+      bottomNavigationBarTheme: _buildLightBottomNavigationBarTheme(),
       // 색상 스키마
       colorScheme: ColorScheme.fromSwatch(
         // 주 스워치
@@ -53,6 +55,30 @@ class AppTheme {
         letterSpacing: -0.05,
         color: AppColors.textDefault,
       ),
+    );
+  }
+
+  // BottomNavigation 밝은 테마 만들기
+  static BottomNavigationBarThemeData _buildLightBottomNavigationBarTheme() {
+    return BottomNavigationBarThemeData(
+      backgroundColor: Colors.white,
+      selectedItemColor: AppColors.contentColorLightTheme.withOpacity(0.7),
+      unselectedItemColor: AppColors.contentColorLightTheme.withOpacity(0.32),
+
+      selectedIconTheme: IconThemeData(color: AppColors.brand),
+
+      showSelectedLabels: true,
+      selectedLabelStyle: TextStyle(
+        fontSize: 12,
+        color: AppColors.brand
+      ),
+
+      showUnselectedLabels: true,
+      unselectedLabelStyle: TextStyle(
+        fontSize: 10,
+      ),
+
+      type: BottomNavigationBarType.fixed,
     );
   }
 

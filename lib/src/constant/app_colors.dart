@@ -15,4 +15,6 @@ class AppColors {
   static const Color black800 = Color(0xFF121212);
   /// 검은색 900
   static const Color black900 = Color(0xFF000000);
+
+  static const Color contentColorLightTheme = Color(0xFF1A1A1A);
 }

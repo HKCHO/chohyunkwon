@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:chohyunkwon/src/config/app_theme.dart';
-import 'package:chohyunkwon/src/screen/home_screen.dart';
+import 'package:chohyunkwon/src/screen/home/home_screen.dart';
 
 void main() {
   runApp(ChoHyunKwon());
@@ -13,8 +13,9 @@ class ChoHyunKwon extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '조현권',
+      debugShowCheckedModeBanner: false,
       theme: AppTheme.buildLightTheme(context),
-      home: HomePage(title: '홈 스크린'),
+      home: HomePage(),
       builder: (context, child) {
         final mediaQueryData = MediaQuery.of(context);
 
