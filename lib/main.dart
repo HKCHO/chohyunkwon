@@ -1,6 +1,7 @@
 
-import 'package:chohyunkwon/src/config/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:chohyunkwon/src/config/app_theme.dart';
+import 'package:chohyunkwon/src/screen/home_screen.dart';
 
 void main() {
   runApp(ChoHyunKwon());
@@ -13,7 +14,7 @@ class ChoHyunKwon extends StatelessWidget {
     return MaterialApp(
       title: '조현권',
       theme: AppTheme.buildLightTheme(context),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: HomePage(title: '홈 스크린'),
       builder: (context, child) {
         final mediaQueryData = MediaQuery.of(context);
 
@@ -27,39 +28,6 @@ class ChoHyunKwon extends StatelessWidget {
           data: MediaQuery.of(context).copyWith(textScaleFactor: scale),
         );
       },
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              '플러터 도전기',
-            ),
-
-          ],
-        ),
-      ),
     );
   }
 }
