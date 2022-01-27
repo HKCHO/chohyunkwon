@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:chohyunkwon/src/config/app_theme.dart';
-import 'package:chohyunkwon/src/screen/home/home_screen.dart';
+import 'package:chohyunkwon/configurations/app_theme.dart';
+import 'package:chohyunkwon/screens/home/home_screen.dart';
 
 void main() {
   runApp(ChoHyunKwon());

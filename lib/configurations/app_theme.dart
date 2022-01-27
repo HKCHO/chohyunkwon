@@ -1,7 +1,7 @@
 // 어플리케이션 테마 설정
 // 참고: https://api.flutter.dev/flutter/material/ThemeData-class.html
 
-import 'package:chohyunkwon/src/constant/app_colors.dart';
+import 'package:chohyunkwon/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
