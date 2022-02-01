@@ -1,0 +1,10 @@
+{
+  "appName": "조현권",
+  "@appName": {
+    "description": "어플리케이션 이름"
+  },
+  "bottomNavHome": "홈",
+  "bottomNavGallery": "갤러리",
+  "bottomNavSchedule": "일정",
+  "bottomNavMore": "더보기"
+}

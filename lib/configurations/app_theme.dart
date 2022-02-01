@@ -32,8 +32,9 @@ class AppTheme {
 
   static SystemUiOverlayStyle buildLightSystemUiOverlayStyle() {
     return SystemUiOverlayStyle(
-      statusBarColor: Color.fromRGBO(AppColors.brand.red, AppColors.brand.green, AppColors.brand.blue, 0.65),
-      statusBarIconBrightness: Brightness.light,
+      // statusBarColor: Color.fromRGBO(AppColors.brand.red, AppColors.brand.green, AppColors.brand.blue, 0.65),
+      statusBarColor: AppColors.scaffoldBackgroundColor,
+      statusBarIconBrightness: Brightness.dark,
       statusBarBrightness: Brightness.light,
     );
   }
@@ -44,13 +45,6 @@ class AppTheme {
   // 기본 텍스트 테마 참고: https://api.flutter.dev/flutter/material/TextTheme-class.html
   static TextTheme _buildLightTextTheme(TextTheme base) {
     return base.copyWith(
-      // headline1: GoogleFonts.mcLaren(),
-      // headline2: GoogleFonts.mcLaren(),
-      // headline3: GoogleFonts.mcLaren(),
-      // headline4: GoogleFonts.mcLaren(),
-      // headline5: GoogleFonts.mcLaren(),
-      // headline6: GoogleFonts.mcLaren(),
-      // bodyText1: GoogleFonts.mcLaren(),
       bodyText1: GoogleFonts.notoSans(
         fontWeight: FontWeight.normal,
         fontSize: 18,

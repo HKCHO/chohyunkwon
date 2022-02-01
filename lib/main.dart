@@ -1,8 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:chohyunkwon/configurations/app_theme.dart';
-import 'package:chohyunkwon/screens/home/home_screen.dart';
+import 'package:chohyunkwon/screens/welcome/welcome_screen.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(ChoHyunKwon());
@@ -19,9 +20,13 @@ class ChoHyunKwon extends StatelessWidget {
 
     return MaterialApp(
       title: '조현권',
-      debugShowCheckedModeBanner: false,
+      onGenerateTitle: (BuildContext context) =>
+        AppLocalizations.of(context)!.appName,
+
+      debugShowCheckedModeBanner: false,  // debug 라벨 감추기
+
       theme: AppTheme.buildLightTheme(context),
-      home: HomeScreen(),
+      home: WelcomeScreen(),
       builder: (context, child) {
         final mediaQueryData = MediaQuery.of(context);
 
@@ -34,6 +39,26 @@ class ChoHyunKwon extends StatelessWidget {
           child: child!,
           data: MediaQuery.of(context).copyWith(textScaleFactor: scale),
         );
+      },
+
+      // l10n delegates
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+
+      // 지원하는 locale
+      supportedLocales: AppLocalizations.supportedLocales,
+
+      localeListResolutionCallback: (locales, supportedLocales) {
+        print('device locales=$locales supported locales=$supportedLocales');
+
+        for (Locale locale in locales!) {
+          for(Locale supportedLocale in supportedLocales) {
+            if( supportedLocale.languageCode == locale.languageCode ) {
+              return locale;
+            }
+          }
+        }
+
+        return Locale('ko', '');
       },
     );
   }

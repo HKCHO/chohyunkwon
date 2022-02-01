@@ -1,0 +1,6 @@
+arb-dir: lib/l10n
+template-arb-file: app_ko.arb
+output-localization-file: app_localizations.dart
+
+# app_{lang}.arb에 추가 후
+# ${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n.
