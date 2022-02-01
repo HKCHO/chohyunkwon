@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+import 'package:chohyunkwon/screens/gallery/gallery_screen.dart';
+
+class HomeScreen extends StatefulWidget {
+  HomeScreen({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 1;
+class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
     setState(() {
@@ -18,18 +20,15 @@ class _HomePageState extends State<HomePage> {
 
   List<Widget> bodyList = [
     Container(color: Colors.blueGrey, child: Center(child: Text('0: 홈'))),
-    Container(color: Colors.red, child: Center(child: Text('1: 갤러리')),),
-    Container(color: Colors.amber, child: Center(child: Text('2: 게시판')),),
-    Container(color: Colors.green, child: Center(child: Text('3: 내 정보')),),
+    GalleryScreen(),
+    Container(color: Colors.amber, child: Center(child: Text('2: 채팅')),),
+    Container(color: Colors.green, child: Center(child: Text('3: 더보기')),),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('홈'),
-      ),
-      body: bodyList[_selectedIndex],
+      body: bodyList.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
@@ -43,12 +42,12 @@ class _HomePageState extends State<HomePage> {
             label: '갤러리',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.speaker_notes_outlined),
-            label: '게시판',
+            icon: Icon(Icons.chat_bubble_outline_outlined),
+            label: '채팅',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: '내 정보',
+            icon: Icon(Icons.more_horiz_outlined),
+            label: '더보기',
           ),
         ],
       ),

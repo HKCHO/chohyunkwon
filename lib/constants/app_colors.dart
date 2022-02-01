@@ -7,7 +7,8 @@ class AppColors {
   static const Color brand = Color(0xFF005243);
   /// 텍스트 기본색상
   static const Color textDefault = AppColors.black900;
-
+  /// 스캐폴드 기본색
+  static const Color scaffoldBackgroundColor = AppColors.white50;
   /// 흰색 50 - #FFFFFFFF
   static const Color white50 = Color(0xFFFFFFFF);
 

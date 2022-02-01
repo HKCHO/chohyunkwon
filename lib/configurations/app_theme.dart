@@ -26,7 +26,15 @@ class AppTheme {
       // 텍스트 테마
       textTheme: _buildLightTextTheme(base.textTheme),
       // 스캐폴드 배경색
-      scaffoldBackgroundColor: AppColors.white50,
+      scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor,
+    );
+  }
+
+  static SystemUiOverlayStyle buildLightSystemUiOverlayStyle() {
+    return SystemUiOverlayStyle(
+      statusBarColor: Color.fromRGBO(AppColors.brand.red, AppColors.brand.green, AppColors.brand.blue, 0.65),
+      statusBarIconBrightness: Brightness.light,
+      statusBarBrightness: Brightness.light,
     );
   }
 
