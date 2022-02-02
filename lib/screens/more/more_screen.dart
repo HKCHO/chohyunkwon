@@ -23,7 +23,7 @@ class _MoreScreenState extends State<MoreScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppBar(),
+      appBar: _buildAppBar(context),
       body: SafeArea(
         child: Container(
           child: Center(
@@ -33,7 +33,8 @@ class _MoreScreenState extends State<MoreScreen> {
     );
   }
 
-  PreferredSizeWidget _buildAppBar() {
+  // 더보기 화면 앱바
+  PreferredSizeWidget _buildAppBar(BuildContext context) {
     return AppBar(
       centerTitle: false,
       title: Text('더보기'),
@@ -41,16 +42,21 @@ class _MoreScreenState extends State<MoreScreen> {
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: AppColors.brand,
         statusBarIconBrightness: Brightness.light,
-        statusBarBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
       ),
       actions: [
-        IconButton(
-            onPressed: () {
-              print('설정버튼 눌림');
-            },
-            icon: Icon(Icons.settings_outlined)
-        )
+        _settingsButton(context)
       ],
+    );
+  }
+
+  // 설정 버튼
+  IconButton _settingsButton(BuildContext context) {
+    return IconButton(
+      onPressed: () {
+        print('설정버튼 눌림.');
+      },
+      icon: Icon(Icons.settings_outlined)
     );
   }
 }
