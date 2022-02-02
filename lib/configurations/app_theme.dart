@@ -14,6 +14,7 @@ class AppTheme {
     return base.copyWith(
       appBarTheme: AppBarTheme(
         systemOverlayStyle: SystemUiOverlayStyle.light,  // primaryColor가 어두운 계열 색상이라 statusbar brightness도 dark로 세팅
+        shadowColor: Colors.transparent,
       ),
       bottomNavigationBarTheme: _buildLightBottomNavigationBarTheme(),
       // 색상 스키마

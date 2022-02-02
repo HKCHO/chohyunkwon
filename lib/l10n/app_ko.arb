@@ -6,5 +6,7 @@
   "bottomNavHome": "홈",
   "bottomNavGallery": "갤러리",
   "bottomNavSchedule": "일정",
-  "bottomNavMore": "더보기"
+  "bottomNavMore": "더보기",
+
+  "settings": "설정"
 }

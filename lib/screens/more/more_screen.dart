@@ -1,5 +1,6 @@
 import 'package:chohyunkwon/configurations/app_theme.dart';
 import 'package:chohyunkwon/constants/app_colors.dart';
+import 'package:chohyunkwon/screens/settings/settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -54,7 +55,10 @@ class _MoreScreenState extends State<MoreScreen> {
   IconButton _settingsButton(BuildContext context) {
     return IconButton(
       onPressed: () {
-        print('설정버튼 눌림.');
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => SettingsScreen()),
+        );
       },
       icon: Icon(Icons.settings_outlined)
     );

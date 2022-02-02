@@ -3,5 +3,7 @@
   "bottomNavHome": "Home",
   "bottomNavGallery": "Gallery",
   "bottomNavSchedule": "Schedule",
-  "bottomNavMore": "More"
+  "bottomNavMore": "More",
+
+  "settings": "Settings"
 }
