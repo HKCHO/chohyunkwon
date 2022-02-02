@@ -71,11 +71,11 @@ class AppTheme {
 
       showSelectedLabels: true,
       selectedLabelStyle: TextStyle(
-        fontSize: 12,
+        fontSize: 10,
         color: AppColors.brand
       ),
 
-      showUnselectedLabels: true,
+      showUnselectedLabels: false,
       unselectedLabelStyle: TextStyle(
         fontSize: 10,
       ),

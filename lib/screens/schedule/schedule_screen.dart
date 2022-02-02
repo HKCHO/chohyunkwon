@@ -14,7 +14,11 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          child: SfCalendar(),
+          child: SfCalendar(
+            view: CalendarView.month,
+            headerDateFormat: 'yyy년 MMM',
+            // firstDayOfWeek: 1, // 월요일 시작
+          ),
         )
       ),
     );

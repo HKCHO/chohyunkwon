@@ -1,3 +1,5 @@
+import 'package:chohyunkwon/screens/home/home_screen.dart';
+import 'package:chohyunkwon/screens/more/more_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:chohyunkwon/screens/gallery/gallery_screen.dart';
@@ -22,10 +24,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   }
 
   List<Widget> bodyList = [
-    Container(color: Colors.blueGrey, child: Center(child: Text('0: 홈'))),
+    HomeScreen(),
     GalleryScreen(),
     ScheduleScreen(),
-    Container(color: Colors.green, child: Center(child: Text('3: 더보기')),),
+    MoreScreen(),
   ];
 
   @override
