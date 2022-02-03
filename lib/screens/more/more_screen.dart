@@ -14,14 +14,6 @@ class MoreScreen extends StatefulWidget {
 class _MoreScreenState extends State<MoreScreen> {
 
   @override
-  void dispose() {
-    super.dispose();
-
-    SystemChrome.setSystemUIOverlayStyle(
-        AppTheme.buildLightSystemUiOverlayStyle());
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(context),
@@ -37,14 +29,8 @@ class _MoreScreenState extends State<MoreScreen> {
   // 더보기 화면 앱바
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return AppBar(
-      centerTitle: false,
       title: Text('더보기'),
-      shadowColor: Colors.transparent,
-      systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: AppColors.brand,
-        statusBarIconBrightness: Brightness.light,
-        statusBarBrightness: Brightness.dark,
-      ),
+      centerTitle: false,
       actions: [
         _settingsButton(context)
       ],

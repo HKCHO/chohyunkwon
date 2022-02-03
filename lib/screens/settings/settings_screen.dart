@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'package:settings_ui/settings_ui.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -36,8 +35,23 @@ class _SettingsScreenState extends State<SettingsScreen> {
       appBar: _buildAppBar(context),
       body: SafeArea(
         child: SettingsList(
+          shrinkWrap: false,
+          platform: DevicePlatform.iOS,
+          // applicationType: ApplicationType.cupertino,
           lightTheme: _buildSettingsLightTheme(context),
           sections: [
+            SettingsSection(
+              tiles: [
+                SettingsTile.navigation(
+                  // leading: Icon(Icons.notifications_none_sharp),
+                  title: Text('공지사항'),
+                  trailing: Text(''),
+                  onPressed: (context) {
+                    print('TODO 공지사항 스크린으로 이동');
+                  },
+                ),
+              ],
+            ),
             SettingsSection(
               title: Text('알림'),
               tiles: <SettingsTile>[
@@ -111,13 +125,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
   // 더보기 화면 앱바
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return AppBar(
-      centerTitle: false,
+      // title: Text(AppLocalizations.of(context)!.settings),
       title: Text(AppLocalizations.of(context)!.settings),
-      systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: AppColors.brand,
-        statusBarIconBrightness: Brightness.light,
-        statusBarBrightness: Brightness.dark,
-      ),
     );
   }
 

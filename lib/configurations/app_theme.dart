@@ -1,6 +1,8 @@
 // 어플리케이션 테마 설정
 // 참고: https://api.flutter.dev/flutter/material/ThemeData-class.html
 
+import 'dart:ui';
+
 import 'package:chohyunkwon/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -13,8 +15,15 @@ class AppTheme {
 
     return base.copyWith(
       appBarTheme: AppBarTheme(
-        systemOverlayStyle: SystemUiOverlayStyle.light,  // primaryColor가 어두운 계열 색상이라 statusbar brightness도 dark로 세팅
+        centerTitle: true,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarIconBrightness: Brightness.dark,
+          statusBarBrightness: Brightness.light,
+        ),  // primaryColor가 어두운 계열 색상이라 statusbar brightness도 dark로 세팅
         shadowColor: Colors.transparent,
+        // centerTitle: false,
+        foregroundColor: Colors.black87,
+        backgroundColor: Colors.transparent,
       ),
       bottomNavigationBarTheme: _buildLightBottomNavigationBarTheme(),
       // 색상 스키마
@@ -46,6 +55,30 @@ class AppTheme {
   // 기본 텍스트 테마 참고: https://api.flutter.dev/flutter/material/TextTheme-class.html
   static TextTheme _buildLightTextTheme(TextTheme base) {
     return base.copyWith(
+      headline1: GoogleFonts.notoSans(
+        fontWeight: FontWeight.w200,
+        fontSize: 96,
+        letterSpacing: -1.5,
+        color: AppColors.textDefault,
+      ),
+      headline6: GoogleFonts.notoSans(
+        fontWeight: FontWeight.bold,
+        fontSize: 20,
+        letterSpacing: 0.15,
+        color: AppColors.textDefault,
+      ),
+      subtitle1: GoogleFonts.notoSans(
+        fontWeight: FontWeight.normal,
+        fontSize: 16,
+        letterSpacing: 0.15,
+        color: AppColors.textDefault,
+      ),
+      subtitle2: GoogleFonts.notoSans(
+        fontWeight: FontWeight.bold,
+        fontSize: 14,
+        letterSpacing: 0.1,
+        color: AppColors.textDefault,
+      ),
       bodyText1: GoogleFonts.notoSans(
         fontWeight: FontWeight.normal,
         fontSize: 18,
