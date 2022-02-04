@@ -1,8 +1,6 @@
 // 어플리케이션 테마 설정
 // 참고: https://api.flutter.dev/flutter/material/ThemeData-class.html
 
-import 'dart:ui';
-
 import 'package:chohyunkwon/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

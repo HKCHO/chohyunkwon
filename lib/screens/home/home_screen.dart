@@ -1,4 +1,3 @@
-import 'package:chohyunkwon/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:chohyunkwon/constants/app_constants.dart';
