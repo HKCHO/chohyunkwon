@@ -1,8 +1,5 @@
-import 'package:chohyunkwon/configurations/app_theme.dart';
-import 'package:chohyunkwon/constants/app_colors.dart';
 import 'package:chohyunkwon/screens/settings/settings_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class MoreScreen extends StatefulWidget {
   MoreScreen({Key? key}) : super(key: key);
